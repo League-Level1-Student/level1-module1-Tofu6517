@@ -7,6 +7,11 @@ import java.util.Random;
  * A vault with a secret code
  *
  */
+
+
+
+
+
 public class Vault {
 	private int secret = new Random().nextInt(1000001);
 
