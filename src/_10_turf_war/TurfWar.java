@@ -21,6 +21,19 @@ public class TurfWar extends PApplet {
         int downKey;
         int rightKey;
 
+        public Player(int x,int y,int speed,int playerSize,int playerColor,int upKey,int leftKey,int downKey,int rightKey) {
+          this.x=x;
+          	this.y=y;
+          		this.speed=speed;
+          			this.playerSize=playerSize;
+          				this.playerColor=playerColor;
+          					this.upKey=upKey;
+          						this.leftKey=leftKey;
+          							this.downKey=downKey;
+          								this.rightKey=rightKey;
+        }
+        
+        
         /*
          * The member variables below do not need to be initialized in the
          * constructor.
@@ -36,7 +49,8 @@ public class TurfWar extends PApplet {
              * 2. Draw a rectangle to represent the the Player using its color,
              * coordinates and size.
              */
-            
+            rect(x, y, playerSize, playerSize );
+            color(playerColor,playerColor,playerColor);
         }
 
         void update() {
@@ -58,7 +72,15 @@ public class TurfWar extends PApplet {
              * Note: You do not need to use the statsBoardLine for the 
              * other directions.
              */
-            
+            if (moveUp && -y > 0) {
+                y-=speed;
+            }
+            if (moveUp && x > 0) {
+                x-=speed;
+            }
+            if (moveUp && -x > 0) {
+                x-=speed;
+            }
         }
 
         // You do not need to change any other Player methods.
@@ -108,7 +130,9 @@ public class TurfWar extends PApplet {
      * 4. Declare two variables of the Player class called player1 and player2.
      * Do not initialize them yet.
      */
-
+    int o;
+    Player player1=new Player(o,o,o,o,o,o,o,o,o);
+    Player player2=new Player(o,o,o,o,o,o,o,o,o);
     
 
     // Do not change these variables
@@ -129,7 +153,7 @@ public class TurfWar extends PApplet {
     @Override
     public void settings() {
         // 5. Set the size for your sketch. Make it at least 300x300.
-       
+       size(300,300);
     }
 
     @Override
@@ -141,10 +165,10 @@ public class TurfWar extends PApplet {
         ((java.awt.Canvas) surface.getNative()).requestFocus();
 
         // 6. Set the background color.
-
+        background(0,0,200);
 
         // 7. Call the noStroke Method.
-        
+        noStroke();
         
         /*
          * 8. Initialize the two Player objects. For one use UP, LEFT, DOWN,
@@ -158,7 +182,8 @@ public class TurfWar extends PApplet {
          * not select black, white or the color you used for your background as it
          * will give that player an unfair advantage.
          */
-
+        Player player1=new Player(20,150,10,20,0,87,65,83,68);
+        Player player2=new Player(260,150,10,20,250,87,65,83,68);
         
     }
 
@@ -241,27 +266,27 @@ public class TurfWar extends PApplet {
 
     @Override
     public void keyPressed() {
-        /*
-         * 15. Call the enableMovement method for both players and pass keyCode
-         * to the method.
-         */        
+        
+          15. Call the enableMovement method for both players and pass keyCode
+          to the method.
+                 
 
     }
 
     @Override
     public void keyReleased() {
-        /*
-         * 16. Call the disableMovement method for both players and pass keyCode
-         * to the method.
-         */
+        
+          16. Call the disableMovement method for both players and pass keyCode
+          to the method.
+         
 
     }
 
-    /*
-     * 17. Try to play a game of Turf War with someone nearby if possible. The
-     * goal of the game is to fill in more of the sketch with your color than
-     * the other player.
-     */
+    
+      17. Try to play a game of Turf War with someone nearby if possible. The
+      goal of the game is to fill in more of the sketch with your color than
+      the other player.
+     
 
     // Challenge: Try to add more players to the game. If you need to figure out
     // additional keycodes for controls try using https://keycode.info/

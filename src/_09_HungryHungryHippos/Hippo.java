@@ -12,20 +12,21 @@ public class Hippo {
     String location;
     int startNeckSpeed = 15;
     int neckMoveDistance = 100;
-    String lizzie=("Lizzie");
-    String henry=("Henry");
-    String homer=("Homer");
-    String harry=("Harry");
-    Color purple=Color.MAGENTA;
-    Color orange=Color.ORANGE;
-    Color green=Color.GREEN;
-    Color yellow=Color.YELLOW;
+    String lizzie;
+    String henry;
+    String homer;
+    String harry;
+    Color purple;
+    Color orange;
+    Color green;
+    Color yellow;
     /*
      * Constructor
      */
     public Hippo(String location, String name, Color color) {
         this.location = location;
-       
+       this.orange=color;
+       this.lizzie=name;
         setupPosition();
         
     }
@@ -34,11 +35,12 @@ public class Hippo {
         /*
          * Local variables
          */
-        Color bodyColor = purple;
-        String hippoName = lizzie;
-       
+    
+    		Color bodyColor = orange;
+            String hippoName = lizzie;
+
         drawScore(g, hippoName);
-        
+    	
         // Body
         g.setColor(bodyColor);
         g.fillOval(x, y, width, height);
@@ -76,7 +78,8 @@ public class Hippo {
         g.fillOval(noseX2, noseY2, noseWidth, noseLength);
         
         update(g);
-    }
+    	}
+    
     
     
     

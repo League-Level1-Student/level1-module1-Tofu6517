@@ -56,9 +56,9 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
     Color boardColor = new Color(138, 198, 193);
     Game gameFrame = new Game("Hungry Hungry Hippos");
     boolean startGame = false;
-    Hippo lizzie=new Hippo("left","lizzie",Color.MAGENTA);
-    Hippo Henry=new Hippo("left","Henry",Color.ORANGE);
-    Hippo Homer=new Hippo("left","Homer",Color.GREEN);
+    Hippo lizzie=new Hippo("down","lizzie",Color.MAGENTA);
+    Hippo henry=new Hippo("up","Henry",Color.ORANGE);
+    Hippo homer=new Hippo("right","Homer",Color.GREEN);
     
     /*
      * Create your hippo objects here. The "left" input parameter indicates
@@ -100,6 +100,10 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
          * Draw all the hippos here
          */
         myHippoObject.draw(g);
+        lizzie.draw(g);
+        henry.draw(g);
+        homer.draw(g);
+        
         
         if (startGame) {
             /*
