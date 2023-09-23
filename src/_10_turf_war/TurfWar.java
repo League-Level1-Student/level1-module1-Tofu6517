@@ -50,9 +50,9 @@ public class TurfWar extends PApplet {
              * 2. Draw a rectangle to represent the Player using its color,
              * coordinates and size.
              */
-     
+        	
             rect(x, y, playerSize, playerSize );
-            color(playerColor,playerColor,playerColor);
+            fill(playerColor);
         }
 
         void update() {
@@ -74,16 +74,16 @@ public class TurfWar extends PApplet {
              * Note: You do not need to use the statsBoardLine for the 
              * other directions.
              */
-            if (moveUp && y > 0) {
+            if (moveUp && y > 100) {
                 y-=speed;
             }
             if (moveDown && y < 300) {
                 y+=speed;
             }
-            if (moveRight && x > 0) {
+            if (moveRight && x < 300) {
                 x+=speed;
             }
-            if (moveLeft && x < 300) {
+            if (moveLeft && x > 0) {
                 x-=speed;
             }
 
@@ -128,7 +128,6 @@ public class TurfWar extends PApplet {
                     pixelCount++;
                 }
             }
-
         }
     }
 
@@ -137,8 +136,8 @@ public class TurfWar extends PApplet {
      * Do not initialize them yet.
      */
     int o;
-    Player player1=new Player(o,o,o,o,o,o,o,o,o);
-    Player player2=new Player(o,o,o,o,o,o,o,o,o);
+    Player player1;
+    Player player2;
     
 
     // Do not change these variables
@@ -159,7 +158,7 @@ public class TurfWar extends PApplet {
     @Override
     public void settings() {
         // 5. Set the size for your sketch. Make it at least 300x300.
-       size(600,600);
+       size(320,320);
     }
 
     @Override
@@ -188,8 +187,8 @@ public class TurfWar extends PApplet {
          * not select black, white or the color you used for your background as it
          * will give that player an unfair advantage.
          */
-        player1=new Player(20,150,10,20,0,87,65,83,68);
-        player2=new Player(260,150,10,20,25,38,37,40,39);
+        player1=new Player(20,150,10,20,Color.ORANGE.getRGB(),87,65,83,68);
+        player2=new Player(260,150,10,20,Color.BLACK.getRGB(),38,37,40,39);
     }
     	
     /*
@@ -241,7 +240,7 @@ public class TurfWar extends PApplet {
         loadPixels();
         player1.countPixels();
         player2.countPixels();
-        
+
         String player1Display = "Player 1 Coverage: " + calculateRoundedPixelPercentage(player1.pixelCount) + "%";
         text(player1Display, (width/2 - (player1Display.length()*statsBoardSpacing) / 4)  , statsBoardSpacing*2);
         
