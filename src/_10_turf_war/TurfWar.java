@@ -187,8 +187,8 @@ public class TurfWar extends PApplet {
          * not select black, white or the color you used for your background as it
          * will give that player an unfair advantage.
          */
-        player1=new Player(20,150,10,20,Color.ORANGE.getRGB(),87,65,83,68);
-        player2=new Player(260,150,10,20,Color.BLACK.getRGB(),38,37,40,39);
+        player1=new Player(20,150,10,20,Color.GREEN.getRGB(),87,65,83,68);
+        player2=new Player(260,150,10,20,Color.ORANGE.getRGB(),38,37,40,39);
     }
     	
     /*
